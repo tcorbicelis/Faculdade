@@ -5,10 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AM Confecções</title>
+
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="style.css">
-
 </head>
 
 <body>
@@ -16,81 +15,94 @@
     <!-- ===== Header ===== -->
     <header>
         <div class="logo">AM Confecções</div>
+
         <nav>
             <a href="#">Home</a>
-            <a href="#">Catálogo</a>
+            <a href="#catalog">Catálogo</a>
             <a href="#">Novidades</a>
             <a href="#">Sobre</a>
             <a href="#">Contato</a>
         </nav>
+
         <div class="header-icons">
             <i onclick="openModal()">👤</i>
             <i>🛒</i>
         </div>
     </header>
 
-    <!-- ===== Hero Banner ===== -->
-    <section class="hero">
-        <div>
-            <h1>Moda consciente, estilo único</h1>
-            <p>Descubra peças selecionadas com cuidado e estilo</p>
-            <button>Ver Catálogo</button>
-        </div>
-    </section>
+    <!-- ===== CONTAINER COM FUNDO ===== -->
+    <div class="background-section">
 
-    <!-- ===== Search Bar ===== -->
-    <div class="search-bar">
-        <input type="text" placeholder="Buscar produtos...">
-        <button>Buscar</button>
+        <!-- ===== Hero ===== -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Moda consciente, estilo único</h1>
+                <p>Descubra peças selecionadas com cuidado e estilo</p>
+                <button onclick="scrollToCatalog()">Ver Catálogo</button>
+            </div>
+        </section>
+
+        <!-- ===== Search ===== -->
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Buscar produtos...">
+            <button>Buscar</button>
+        </div>
+
+        <!-- ===== Catalog ===== -->
+        <section class="catalog" id="catalog">
+
+            <div class="product">
+                <img src="img/blusav.jpg" alt="Blusa Vintage" loading="lazy">
+                <div class="product-info">
+                    <h3>Blusa Vintage</h3>
+                    <p>R$ 79,90</p>
+                    <button onclick="addToCart('Blusa Vintage', 79.90)">Adicionar</button>
+                </div>
+            </div>
+
+            <div class="product">
+                <img src="img/calcaj.jpg" alt="Calça Jeans" loading="lazy">
+                <div class="product-info">
+                    <h3>Calça Jeans</h3>
+                    <p>R$ 129,90</p>
+                    <button onclick="addToCart('Calça Jeans', 129.90)">Adicionar</button>
+                </div>
+            </div>
+
+            <div class="product">
+                <img src="img/vestido.jpg" alt="Vestido Floral" loading="lazy">
+                <div class="product-info">
+                    <h3>Vestido Floral</h3>
+                    <p>R$ 99,90</p>
+                    <button onclick="addToCart('Vestido Floral', 99.90)">Adicionar</button>
+                </div>
+            </div>
+
+        </section>
+
     </div>
-
-    <!-- ===== Catalog ===== -->
-    <section class="catalog">
-        <div class="product" style="animation-delay:0s">
-            <img src="img/blusav.jpg" alt="Blusa Vintage">
-            <div class="product-info">
-                <h3>Blusa Vintage</h3>
-                <p>R$ 79,90</p>
-                <button>Adicionar</button>
-            </div>
-        </div>
-        <div class="product" style="animation-delay:0.1s">
-            <img src="img/calcaj.jpg" alt="Blusa Vintage">
-            <div class="product-info">
-                <h3>Calça Jeans</h3>
-                <p>R$ 129,90</p>
-                <button>Adicionar</button>
-            </div>
-        </div>
-        <div class="product" style="animation-delay:0.2s">
-            <img src="img/vestido.jpg" alt="Blusa Vintage">
-            <div class="product-info">
-                <h3>Vestido Floral</h3>
-                <p>R$ 99,90</p>
-                <button>Adicionar</button>
-            </div>
-        </div>
-    </section>
 
     <!-- ===== Footer ===== -->
     <footer>
         <p>© 2026 AM Confecções</p>
+
         <div>
             <a href="#">📷 Instagram</a>
             <a href="#">👍 Facebook</a>
             <a href="#">✉️ Contato</a>
         </div>
+
         <p>Desenvolvido por Thayna Corbicelis</p>
     </footer>
 
-    <!-- ===== Modal Login ===== -->
+    <!-- ===== Modal ===== -->
     <div class="modal" id="loginModal">
         <div class="modal-content">
             <span class="close-btn" onclick="closeModal()">×</span>
             <h2>Login</h2>
             <input type="text" placeholder="Email">
             <input type="password" placeholder="Senha">
-            <button>Entrar</button>
+            <button onclick="login()">Entrar</button>
             <p>ou <a href="#">Cadastrar</a></p>
         </div>
     </div>
